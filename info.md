@@ -3,16 +3,18 @@ Scotty + mysql-simple
 
 
 Таблиці
+```
 users (id, username, email, password_hash)
 authors (id, name, faculty) 
 software (id, title, author_id, version, annotation, type, usage_terms, image_url)
 distributions (id, software_id, path, upload_date)
 usage_stats (id, software_id, user_id, date, actions_count)
 popularity (id, software_id, popularity_score, votes)
-
+```
 
 
 Routes
+```
 GET / — показати список програм (назва, автор, версія, рейтинг).
 GET /software/:id — показати деталі (анотація, версія, дистрибутиви, статистика, популярність).
 GET /register — форма реєстрації.
@@ -26,7 +28,7 @@ GET /edit/:id — форма редагування даних про ПЗ (ті
 POST /edit/:id — оновити дані про ПЗ.
 POST /delete/:id — видалити програму.
 POST /vote/:id — проголосувати за популярність ПЗ (оновлює таблицю popularity).
-
+```
 
 
 SQL
