@@ -4,15 +4,12 @@ CREATE DATABASE IF NOT EXISTS software_portal
 
 USE software_portal;
 
--- Ensure clean schema to avoid legacy columns missing (e.g., password in users)
-SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS popularity;
 DROP TABLE IF EXISTS usage_stats;
 DROP TABLE IF EXISTS distributions;
 DROP TABLE IF EXISTS software;
 DROP TABLE IF EXISTS authors;
 DROP TABLE IF EXISTS users;
-SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
