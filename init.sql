@@ -4,13 +4,6 @@ CREATE DATABASE IF NOT EXISTS software_portal
 
 USE software_portal;
 
-DROP TABLE IF EXISTS popularity;
-DROP TABLE IF EXISTS usage_stats;
-DROP TABLE IF EXISTS distributions;
-DROP TABLE IF EXISTS software;
-DROP TABLE IF EXISTS authors;
-DROP TABLE IF EXISTS users;
-
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) UNIQUE NOT NULL,
@@ -66,7 +59,6 @@ CREATE TABLE IF NOT EXISTS popularity (
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
 );
 
--- Seed admin and sample data
 INSERT INTO users (username, email, password, is_admin)
 VALUES ('admin', 'admin@example.com', 'admin123', 1)
 ON DUPLICATE KEY UPDATE email=VALUES(email), password=VALUES(password), is_admin=VALUES(is_admin);
